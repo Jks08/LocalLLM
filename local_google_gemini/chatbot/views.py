@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -40,13 +41,8 @@ class Chat_InputDataProcessing:
 
 class LandingPage(APIView):
     def get(self, request):
-        modelList = []
-
-        for m in genai.list_models():
-            if 'generateContent' in m.supported_generation_methods:
-                modelList.append(m.name)
-        
-        return Response(modelList)
+        # Use the landing_page.html template
+        return render(request, 'landing_page.html')
 
 class SingleInputDataView(APIView):
     def get(self, request):
