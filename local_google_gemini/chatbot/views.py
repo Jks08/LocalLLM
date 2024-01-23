@@ -42,7 +42,7 @@ class Chat_InputDataProcessing:
 class LandingPage(APIView):
     def get(self, request):
         # Use the landing_page.html template
-        return render(request, 'landing_page.html')
+        return render(request, 'chatbot/landing_page.html')
 
 class SingleInputDataView(APIView):
     def get(self, request):
