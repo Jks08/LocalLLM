@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local ChatBot</title>
-</head>
-<body>
-    <h1>Local ChatBot</h1>
-    <form action="/ChatFrontEnd" method="post">
-        {% csrf_token %}
-        <label for="input_text">Input: </label>
-        <style>
-            #input_text {
-                resize: none;
-            }
-            pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        </style>
-        <textarea name="input_text" id="input_text" cols="100" rows="8" required></textarea>
-        <br>
-        <br>
-        <button type="submit">Submit</button>
-        <button type="submit" name="clear_history" value="true">Clear History</button>
-    </form>
-    <div id="chat-history">
+{% extends 'base.html' %}
+{% block header %}
+{% load static %}
+<header class="bg-dark py-5">    
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5 text-center text-xl-start">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Local ChatBot</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+{% block content %}
+<section class="py-5" id="features">
+    <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center">
+        <form action="/ChatFrontEnd" method="post">
+            {% csrf_token %}
+            <label for="input_text", style="font-size: 30px;font-family: 'Times New Roman', Times, serif;"> Input: </label>
+            <br>
+            <textarea name="input_text" id="input_text" cols="30" rows="3" style="border-color: teal; border-style: solid; border-width: thick;" required></textarea>
+            <br>
+            <strong><button type="submit">Submit</button></strong>
+            <strong><button type="submit" name="clear_history" value="true">Clear History</button></strong>
+            <br><br>
+        </form> 
+    </div></div>
+
+    <div class="container px-5 align-items-center justify-content-center", style="padding-top: 10px; padding-bottom: 10px;">
         {% for message in chat_history %}
-            <pre><strong>{{ message.role }}:</strong> {{ message.text }}</pre>
+        <pre><strong>{{ message.role }}:</strong> {{ message.text }}</pre>
         {% endfor %}
     </div>
-</body>
-</html>
+</section>
+
+<footer>
+    <form action="/" method="get", style="padding-left: 75%;">
+        <button type="submit", style="border-color: rgb(25, 0, 255); border-style: solid; border-width: thick; background-color: bisque;"><strong>Go Back</strong></button>
+    </form> 
+</footer>
+{% endblock content %}

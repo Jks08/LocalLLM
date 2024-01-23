@@ -9,7 +9,7 @@ GOOGLE_API_KEY= api_key
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def to_markdown(text):
-    text = text.replace('•', '  *')
+    text = text.replace('•', '•')
     return textwrap.indent(text, '> ', predicate=lambda _: True)
 
 class ChatSession:
