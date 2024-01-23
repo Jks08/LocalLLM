@@ -40,3 +40,8 @@ def chat_page(request):
             chat_history.append({"role": "Gemini", "text": response.text})
 
     return render(request, 'chatbot/chat_page.html', {'chat_history': chat_history})
+
+def ClearHistory(request):
+    global chat_history
+    chat_history = []
+    return render(request, 'chatbot/chat_page.html', {'chat_history': chat_history})

@@ -24,10 +24,9 @@
             <br>
             <textarea name="input_text" id="input_text" cols="30" rows="3" style="border-color: teal; border-style: solid; border-width: thick;" required></textarea>
             <br>
-            <strong><button type="submit">Submit</button></strong>
-            <strong><button type="submit" name="clear_history" value="true">Clear History</button></strong>
+            <strong><button type="submit", style="background-color: teal; font-size: large; color: aliceblue; border-radius: 5px;"><strong>Submit</strong></button></strong>
             <br><br>
-        </form> 
+        </form>
     </div></div>
 
     <div class="container px-5 align-items-center justify-content-center", style="padding-top: 10px; padding-bottom: 10px;">
@@ -38,8 +37,14 @@
 </section>
 
 <footer>
+    <form action="/ClearHistory" method="post", style="padding-left: 75%;">
+        {% csrf_token %}
+        <strong><button type="submit", style="border-color: rgb(255, 130, 102); border-style: solid; border-width: thick; background-color: rgb(255, 130, 102);color: aliceblue;"><strong>Clear History</strong></button></strong>
+    </form>
+    <br>
+    <br>
     <form action="/" method="get", style="padding-left: 75%;">
-        <button type="submit", style="border-color: rgb(25, 0, 255); border-style: solid; border-width: thick; background-color: bisque;"><strong>Go Back</strong></button>
+        <button type="submit", style="border-color: rgb(255, 130, 102); border-style: solid; border-width: thick; background-color: rgb(255, 130, 102);color: aliceblue"><strong>Go Back</strong></button>
     </form> 
 </footer>
 {% endblock content %}

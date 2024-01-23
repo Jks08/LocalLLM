@@ -6,5 +6,6 @@ urlpatterns = [
     path('', LandingPage.as_view()),
     # path('', index),
     path('Text', SingleInputDataView.as_view()),
-    path('ChatFrontEnd', chat_page)
+    path('ChatFrontEnd', chat_page),
+    path('ClearHistory', ClearHistory),
 ]
