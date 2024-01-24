@@ -20,7 +20,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('', LandingPage.as_view()),
+    path('', LandingPage.as_view(), name='landing_page'),
     path('Text', SingleInputDataView.as_view()),
     path('ChatFrontEnd', chat_page),
     path('ClearHistory', ClearHistory),

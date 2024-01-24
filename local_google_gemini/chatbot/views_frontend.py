@@ -18,7 +18,9 @@ class ChatSession:
         self.chat = self.model.start_chat(history=[])
 
     def ask_question(self, question):
+        # response = self.chat.send_message(question, safety_settings={'HARM_CATEGORY_HARASSMENT':'BLOCK_ONLY_HIGH', 'HARM_CATEGORY_SEXUALLY_EXPLICIT':'BLOCK_ONLY_HIGH', 'HARM_CATEGORY_HATE_SPEECH':'BLOCK_ONLY_HIGH','HARM_CATEGORY_DANGEROUS_CONTENT':'BLOCK_ONLY_HIGH'})
         response = self.chat.send_message(question)
+        print(response.prompt_feedback)
         return response
 
 chat_session = ChatSession()
@@ -34,10 +36,16 @@ def chat_page(request):
         if request.POST.get('clear_history'):
             chat_history = [] 
         else:
-            response = chat_session.ask_question(input_text)
+            try:
+                response = chat_session.ask_question(input_text)
+            except Exception as e:
+                response = f"Input is invalid due to: \n{e}"
 
             chat_history.append({"role": "User", "text": input_text})
-            chat_history.append({"role": "Gemini", "text": response.text})
+            try:
+                chat_history.append({"role": "Gemini", "text": response.text})
+            except:
+                chat_history.append({"role": "Gemini", "text": response})
 
     return render(request, 'chatbot/chat_page.html', {'chat_history': chat_history})
 
