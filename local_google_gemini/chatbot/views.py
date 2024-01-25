@@ -5,6 +5,7 @@ from rest_framework import status
 from .serializers import InputDataSerializer
 from .API_KEY import *
 import google.generativeai as genai
+from .logger import logger
 
 GOOGLE_API_KEY= api_key
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -64,6 +65,7 @@ class SingleInputDataView(APIView):
             chatbot = Single_InputDataProcessing(input_data)
             output = chatbot.get_response()
             print(output.text)
+            logger.info(f"Single Input Data Output: {output.text}")
 
             return Response({output.text}, status=status.HTTP_200_OK)
         else:
@@ -89,6 +91,7 @@ class ChatInputDataView(APIView):
             chatbot = Chat_InputDataProcessing(input_data)  
             output = chatbot.get_response()
             print(output.text)
+            logger.info(f"Chat Input Data Output: {output.text}")
 
             return Response({output.text}, status=status.HTTP_200_OK)
         else:

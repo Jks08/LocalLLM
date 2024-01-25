@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .API_KEY import *
 import google.generativeai as genai
 import textwrap
+from .logger import logger
 
 GOOGLE_API_KEY= api_key
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -20,7 +21,8 @@ class ChatSession:
     def ask_question(self, question):
         # response = self.chat.send_message(question, safety_settings={'HARM_CATEGORY_HARASSMENT':'BLOCK_ONLY_HIGH', 'HARM_CATEGORY_SEXUALLY_EXPLICIT':'BLOCK_ONLY_HIGH', 'HARM_CATEGORY_HATE_SPEECH':'BLOCK_ONLY_HIGH','HARM_CATEGORY_DANGEROUS_CONTENT':'BLOCK_ONLY_HIGH'})
         response = self.chat.send_message(question)
-        print(response.prompt_feedback)
+        # print(response.prompt_feedback)
+        logger.info(f"Safety Settings: {response.prompt_feedback}")
         return response
 
 chat_session = ChatSession()
@@ -38,13 +40,17 @@ def chat_page(request):
         else:
             try:
                 response = chat_session.ask_question(input_text)
+                logger.info(f"Rquest Sent Successfully: {response.text}")
             except Exception as e:
+                logger.error(f"Error: {e}")
                 response = f"Input is invalid due to: \n{e}"
 
             chat_history.append({"role": "User", "text": input_text})
             try:
                 chat_history.append({"role": "Gemini", "text": response.text})
+                logger.info(f"Chat History: {response.text}")
             except:
+                logger.error(f"Error: {response}")
                 chat_history.append({"role": "Gemini", "text": response})
 
     return render(request, 'chatbot/chat_page.html', {'chat_history': chat_history})
