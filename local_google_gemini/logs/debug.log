@@ -1,0 +1,115 @@
+2024-01-24 09:33:36,656 - chatbot.logger - INFO - Logger initialized
+2024-01-24 09:35:41,287 - chatbot.logger - INFO - Logger initialized
+2024-01-24 09:35:48,275 - chatbot.logger - INFO - Logger initialized
+2024-01-24 11:50:49,414 - chatbot.logger - INFO - Logger initialized
+2024-01-24 11:52:01,236 - chatbot.logger - INFO - Logger initialized
+2024-01-24 11:52:14,683 - chatbot.logger - INFO - Logger initialized
+2024-01-25 07:45:01,751 - chatbot.logger - INFO - Logger initialized
+2024-01-25 07:45:13,858 - chatbot.logger - ERROR - Error: index: 0
+finish_reason: SAFETY
+safety_ratings {
+  category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+  probability: NEGLIGIBLE
+}
+safety_ratings {
+  category: HARM_CATEGORY_HATE_SPEECH
+  probability: LOW
+}
+safety_ratings {
+  category: HARM_CATEGORY_HARASSMENT
+  probability: MEDIUM
+}
+safety_ratings {
+  category: HARM_CATEGORY_DANGEROUS_CONTENT
+  probability: NEGLIGIBLE
+}
+
+2024-01-25 07:45:13,867 - chatbot.logger - ERROR - Error: Input is invalid due to: 
+index: 0
+finish_reason: SAFETY
+safety_ratings {
+  category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+  probability: NEGLIGIBLE
+}
+safety_ratings {
+  category: HARM_CATEGORY_HATE_SPEECH
+  probability: LOW
+}
+safety_ratings {
+  category: HARM_CATEGORY_HARASSMENT
+  probability: MEDIUM
+}
+safety_ratings {
+  category: HARM_CATEGORY_DANGEROUS_CONTENT
+  probability: NEGLIGIBLE
+}
+
+2024-01-25 07:45:50,261 - chatbot.logger - INFO - Safety Settings: safety_ratings {
+  category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+  probability: NEGLIGIBLE
+}
+safety_ratings {
+  category: HARM_CATEGORY_HATE_SPEECH
+  probability: NEGLIGIBLE
+}
+safety_ratings {
+  category: HARM_CATEGORY_HARASSMENT
+  probability: NEGLIGIBLE
+}
+safety_ratings {
+  category: HARM_CATEGORY_DANGEROUS_CONTENT
+  probability: NEGLIGIBLE
+}
+
+2024-01-25 07:45:50,263 - chatbot.logger - INFO - Rquest Sent Successfully: Harassment is any unwelcome or unsolicited behavior that is intended to make the recipient feel intimidated, humiliated, or unsafe. It can take many forms, including:
+
+* **Verbal harassment:** This can include insults, threats, or other offensive language.
+* **Physical harassment:** This can include unwanted touching, groping, or assault.
+* **Emotional harassment:** This can include intimidation, threats, or other forms of emotional abuse.
+* **Sexual harassment:** This can include sexual advances, unwanted touching, or sexual coercion.
+* **Cyberbullying:** This is the use of electronic devices to harass or threaten someone.
+
+Harassment can occur in any setting, including workplaces, schools, and public spaces. It can be directed at individuals or groups, and it can have a devastating impact on the victims.
+
+**Examples of harassment include:**
+
+* A supervisor who makes sexual advances toward an employee
+* A student who is bullied by classmates because of their race, religion, or sexual orientation
+* A woman who is catcalled or groped by a stranger on the street
+* A person who is threatened or harassed online because of their political views
+
+**Harassment is a serious problem that can have a lasting impact on the victims.** It can lead to anxiety, depression, and other mental health problems. It can also make it difficult to concentrate at work or school, and it can even lead to physical health problems.
+
+**If you are being harassed, there are a number of things you can do to stop it:**
+
+* **Tell the person who is harassing you to stop.** This can be difficult, but it is important to be direct.
+* **Report the harassment to the appropriate authorities.** This could be your supervisor, your school principal, or the police.
+* **Seek legal help.** If the harassment is severe or if it continues after you have reported it, you may need to take legal action.
+
+**Remember, you are not alone.** Millions of people have been harassed, and there are resources available to help you.
+2024-01-25 07:45:50,263 - chatbot.logger - INFO - Chat History: Harassment is any unwelcome or unsolicited behavior that is intended to make the recipient feel intimidated, humiliated, or unsafe. It can take many forms, including:
+
+* **Verbal harassment:** This can include insults, threats, or other offensive language.
+* **Physical harassment:** This can include unwanted touching, groping, or assault.
+* **Emotional harassment:** This can include intimidation, threats, or other forms of emotional abuse.
+* **Sexual harassment:** This can include sexual advances, unwanted touching, or sexual coercion.
+* **Cyberbullying:** This is the use of electronic devices to harass or threaten someone.
+
+Harassment can occur in any setting, including workplaces, schools, and public spaces. It can be directed at individuals or groups, and it can have a devastating impact on the victims.
+
+**Examples of harassment include:**
+
+* A supervisor who makes sexual advances toward an employee
+* A student who is bullied by classmates because of their race, religion, or sexual orientation
+* A woman who is catcalled or groped by a stranger on the street
+* A person who is threatened or harassed online because of their political views
+
+**Harassment is a serious problem that can have a lasting impact on the victims.** It can lead to anxiety, depression, and other mental health problems. It can also make it difficult to concentrate at work or school, and it can even lead to physical health problems.
+
+**If you are being harassed, there are a number of things you can do to stop it:**
+
+* **Tell the person who is harassing you to stop.** This can be difficult, but it is important to be direct.
+* **Report the harassment to the appropriate authorities.** This could be your supervisor, your school principal, or the police.
+* **Seek legal help.** If the harassment is severe or if it continues after you have reported it, you may need to take legal action.
+
+**Remember, you are not alone.** Millions of people have been harassed, and there are resources available to help you.
